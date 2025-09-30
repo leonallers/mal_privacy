@@ -1,0 +1,13 @@
+{
+  "old_model": {
+    "name": "Ihr bisheriges Einzelmodell",
+    "total_alerts": 5000,
+    "false_positive_rate": 95.0
+  },
+  "new_model": {
+    "name": "Kollektives Modell v1",
+    "total_alerts": 4250,
+    "false_positive_rate": 80.0,
+    "reduction_percent": 15.0
+  }
+}
