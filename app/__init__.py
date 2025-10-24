@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_login import  LoginManager
+from flask_login import LoginManager
 
 # Erstellt eine Instanz der Flask-Anwendung
 app = Flask(__name__)
@@ -15,6 +15,8 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 from app.models import User, USERS
+
+
 # Diese Funktion braucht Flask-Login, um einen Nutzer anhand seiner ID
 # (die in der Session gespeichert ist) zu laden.
 @login_manager.user_loader
@@ -23,9 +25,6 @@ def load_user(user_id):
         user_data = USERS[user_id]
         return User(id=user_data['id'], email=user_data['email'], password=user_data['password'])
     return None
-
-
-
 
 
 # Importiert die Routen, nachdem die App-Instanz erstellt wurde,
